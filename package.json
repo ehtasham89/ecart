@@ -1,0 +1,31 @@
+{
+  "name": "ecart",
+  "version": "1.0.0",
+  "description": "Shopping Cart Portal",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehtasham89/ecart.git"
+  },
+  "keywords": [
+    "nodejs",
+    "shopping",
+    "cart",
+    "nodejs",
+    "ecommerce"
+  ],
+  "author": "ehtasham.nasir89@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehtasham89/ecart/issues"
+  },
+  "homepage": "https://github.com/ehtasham89/ecart#readme"
+}
