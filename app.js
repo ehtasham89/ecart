@@ -1,17 +1,27 @@
-var express = require('express');
+var express = require('express'),
+    mongoose = require('mongoose')
+    bodyParser = require('body-parser');
+
+var db = mongoose.connect('mongodb://localhost/ecart', {
+    //"auth": { "authSource": "admin" },
+    //"user": "username",
+    //"pass": "password",
+    //"useMongoClient": true
+});
 
 var app = express();
 
 var port = process.env.PORT || 3000;
 
-var userRouter = express.Router();
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.set('view engine', 'pug');
 
-userRouter.route('/login')
-        .get(function(req, res){
-            res.json({hello:'this is my api'});
-        });
+var User = require('./models/userModel');
 
-app.use('/api', userRouter);
+userRouter = require('./routes/userRoutes')(User);
+
+app.use('/api/login', userRouter);
 
 app.get('/', function(req, res){
     res.send('welcome to my API!');
