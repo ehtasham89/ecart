@@ -15,11 +15,12 @@ var port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+app.set('views', __dirname + '/Views');
 app.set('view engine', 'pug');
 
-var User = require('./models/userModel');
+var User = require('./Models/userModel');
 
-userRouter = require('./routes/userRoutes')(User);
+userRouter = require('./Routes/userRoutes')(User);
 
 app.use('/api/login', userRouter);
 

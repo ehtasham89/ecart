@@ -1,9 +1,16 @@
 var userController = function(User) {
     var post = function(req, res){
         var newUser = new User(req.body);
+        
+        if(!req.body.first_name) {
+            res.status(400);
+            res.send('first_name require');
+        } else {
+            newUser.save();
 
-        newUser.save();
-        res.status(201).send(newUser);
+            res.status(201);
+            res.send(newUser);
+        }
     },
     get = function(req, res){
         User.find(function(err, users){
