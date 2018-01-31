@@ -9,8 +9,8 @@ gulp.task('default', function(){
             PORT:8001
         },
         ignore: ['./node_modules/**']
-    }),
+    }).
     on('restart', function(){
-        console.log('Server restarted!')
+        console.log('Server restarted!');
     });
 });

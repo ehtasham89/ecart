@@ -12,7 +12,7 @@ var userController = function(User) {
             else
                 res.json(users);
         });
-    }
+    },
     put = function(req, res) {
         req.user.first_name = req.body.first_name;
         req.user.last_name = req.body.last_name;
