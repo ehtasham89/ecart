@@ -24,7 +24,7 @@ userRouter = require('./routes/userRoutes')(User);
 app.use('/api/login', userRouter);
 
 app.get('/', function(req, res){
-    res.send('welcome to my API!');
+    res.render('index', { title: 'E-Cart CMS', message: 'Welcome to E-Cart Shopping Center' });
 });
 
 app.listen(port, function(){
